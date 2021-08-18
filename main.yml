@@ -3,7 +3,7 @@
     - name: creating a vpc
       community.general.terraform:
         project_path: '/var/lib/jenkins/workspace/terraformansible/repo'
-        state: present
+        state: "{{ state_var }}"
         force_init: true
         backend_config:
           region: "eu-west-1"
