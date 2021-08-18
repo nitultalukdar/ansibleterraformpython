@@ -10,5 +10,5 @@
           bucket: "ansibleterraform"
           key: "tfstate/ansible1.tfstate"
         variables:
-          cidr: "10.192.0.0/22"
+          cidr: "10.193.0.0/22"
                       
