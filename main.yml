@@ -1,12 +1,14 @@
 - hosts: localhost
   tasks:
-    - name: Define the backend configuration at init
+    - name: creating a vpc
       community.general.terraform:
-        project_path: '../terraform/project'
+        project_path: '/home/ec2-user/ansible_terraform/terraform1'
         state: present
         force_init: true
         backend_config:
-          region: "ap-south-1"
-          bucket: "demoNitul"
-          key: "demoansible.tfstate"
-                
+          region: "eu-west-1"
+          bucket: "ansibleterraform"
+          key: "tfstate/ansible1.tfstate"
+        variables:
+          cidr: "10.190.0.0/22"
+                      
