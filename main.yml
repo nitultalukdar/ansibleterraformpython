@@ -2,7 +2,7 @@
   tasks:
     - name: creating a vpc
       community.general.terraform:
-        project_path: '/home/ec2-user/ansible_terraform/terraform1'
+        project_path: '/var/lib/jenkins/workspace/terraformansible/repo'
         state: present
         force_init: true
         backend_config:
