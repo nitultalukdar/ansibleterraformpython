@@ -3,13 +3,7 @@ provider "aws" {
     region     = "${var.region}"
 }
 
-terraform {
-  backend "s3" {
-    bucket = "ansibleterraform"
-    key    = "state/ansiblemodule.tfstate"
-    region = "eu-west-1"
-  }
-}
+
 
 
 
