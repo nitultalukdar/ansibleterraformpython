@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - name: Define the backend configuration at init
+      community.general.terraform:
+        project_path: '../terraform/project'
+        state: present
+        force_init: true
+        backend_config:
+          region: "ap-south-1"
+          bucket: "demoNitul"
+          key: "demoansible.tfstate"
+                
