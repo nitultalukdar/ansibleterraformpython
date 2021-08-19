@@ -33,7 +33,7 @@ pipeline {
 							sh 'ansible-galaxy collection install community.general'
 							if(params.State == 'present')
 							{
-							sh 'ansible-playbook main.yml --extra-vars "state_var=present"'
+							sh 'ansible-playbook main.yml --extra-vars "state_var=present" -vv'
 							}
 							else if(params.State == 'absent')
 							{
