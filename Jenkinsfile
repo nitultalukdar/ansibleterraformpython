@@ -37,11 +37,11 @@ pipeline {
 							}
 							else if(params.State == 'absent')
 							{
-							sh 'ansible-playbook main.yml --extra-vars "state_var=absent"'
+							sh 'ansible-playbook main.yml --extra-vars "state_var=absent" -vv'
 							}
 							else if(params.State == 'planned')
 							{
-							sh 'ansible-playbook main.yml --extra-vars "state_var=planned"'
+							sh 'ansible-playbook main.yml --extra-vars "state_var=planned" -vv'
 							}
 							else
 							{
