@@ -3,7 +3,7 @@ pipeline {
 	options { skipDefaultCheckout(true) }
 	parameters {
         
-        choice(name: 'State', choices: ['present', 'absent', 'planned', 'only plan'], description: 'Select the state for Ansible module')
+        choice(name: 'State', choices: ['present', 'absent', 'planned'], description: 'Select the state for Ansible module')
 
         
     }
