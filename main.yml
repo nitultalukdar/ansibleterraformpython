@@ -1,13 +1,24 @@
 - hosts: localhost
   tasks:
+  ##- name: initialize
+    # command: /usr/bin/terraform init
+     #args:
+#       chdir: /var/lib/jenkins/workspace/terraformansible/repo
+#   - name: plan it
+#     command: /usr/bin/terraform plan -no-color -out tfplan.txt
+#     args:
+#       chdir: /var/lib/jenkins/workspace/terraformansible/repo ''' 
     - name: creating a vpc
       community.general.terraform:
         project_path: '/var/lib/jenkins/workspace/terraformansible/repo'
         state: "{{ state_var }}"
         force_init: true
+      # plan_file: '/var/lib/jenkins/workspace/terraformansible/repo/tfplan.txt'
         backend_config:
           region: "eu-west-1"
           bucket: "ansibleterraform"
-          key: "tfstate/ansible1.tfstate"
+          key: "tfstate/ansible2.tfstate"
         variables:
-          cidr: "10.195.0.0/22"
+          cidr: "10.190.0.0/22"
+      register: output
+    - debug: var=output     
