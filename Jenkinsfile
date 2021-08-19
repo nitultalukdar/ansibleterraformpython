@@ -43,10 +43,6 @@ pipeline {
 							{
 							sh 'ansible-playbook main.yml --extra-vars "state_var=planned"'
 							}
-							else if(params.State == 'only plan')
-							{
-							sh 'ansible-playbook main.yml --extra-vars "state_var=planned" --check > /var/lib/jenkins/workspace/terraformansible/planfile'
-							}
 							else
 							{
 							echo "Invalid State"
