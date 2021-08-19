@@ -17,7 +17,7 @@
         backend_config:
           region: "eu-west-1"
           bucket: "ansibleterraform"
-          key: "tfstate/ansible2.tfstate"
+          key: "s3statefiles/terraform.tfstate"
         variables:
           cidr: "10.190.0.0/22"
       register: output
