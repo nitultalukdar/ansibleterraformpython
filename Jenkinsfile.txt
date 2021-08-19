@@ -19,10 +19,7 @@ pipeline {
 					
 				}
 			}
-			stage('Plan') { 
-				steps {
-					echo 'Plan'
-				}
+			
 			}
 			stage('Build') { 
 				steps {
