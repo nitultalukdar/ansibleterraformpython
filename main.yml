@@ -20,4 +20,5 @@
           key: "tfstate/ansible2.tfstate"
         variables:
           cidr: "10.197.0.0/22"
-                      
+      register: output
+    - debug: var=output      
