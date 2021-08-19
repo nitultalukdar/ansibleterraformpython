@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent any options { skipDefaultCheckout() }
 	parameters {
         
         choice(name: 'State', choices: ['present', 'absent', 'planned'], description: 'Select the state for Ansible module')
