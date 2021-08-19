@@ -1,15 +1,15 @@
 - hosts: localhost
   tasks:
-    - name: cd to working directory
-      command: cd /var/lib/jenkins/workspace/terraformansible/repo
-    - name: creating plan file
-      command: sh (terraform plan -no-color | out planfile)
+    #- name: cd to working directory
+     # command: cd /var/lib/jenkins/workspace/terraformansible/repo
+    #- name: creating plan file
+     # command: sh (terraform plan -no-color | out planfile)
     - name: creating a vpc
       community.general.terraform:
         project_path: '/var/lib/jenkins/workspace/terraformansible/repo'
         state: "{{ state_var }}"
         force_init: true
-        plan_file: '/var/lib/jenkins/workspace/terraformansible/repo/planfile'
+        plan_file: '/var/lib/jenkins/workspace/terraformansible/planfile'
         backend_config:
           region: "eu-west-1"
           bucket: "ansibleterraform"

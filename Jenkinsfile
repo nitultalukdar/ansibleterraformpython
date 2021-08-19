@@ -3,7 +3,7 @@ pipeline {
 	options { skipDefaultCheckout(true) }
 	parameters {
         
-        choice(name: 'State', choices: ['present', 'absent', 'planned'], description: 'Select the state for Ansible module')
+        choice(name: 'State', choices: ['present', 'absent', 'planned', 'only plan'], description: 'Select the state for Ansible module')
 
         
     }
@@ -43,7 +43,10 @@ pipeline {
 							{
 							sh 'ansible-playbook main.yml --extra-vars "state_var=planned"'
 							}
-							else 
+							else if(params.State == 'only plan')
+							{
+							sh 'ansible-playbook main.yml --extra-vars "state_var=planned" --check > /var/lib/jenkins/workspace/terraformansible/planfile'
+							} 
 							{
 							echo "Invalid State"
 							}
