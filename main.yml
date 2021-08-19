@@ -3,7 +3,7 @@
     - name: cd to working directory
       command: cd /var/lib/jenkins/workspace/terraformansible/repo
     - name: creating plan file
-      command: terraform plan -no-color > ./planfile
+      command: terraform plan -no-color | out planfile
     - name: creating a vpc
       community.general.terraform:
         project_path: '/var/lib/jenkins/workspace/terraformansible/repo'
