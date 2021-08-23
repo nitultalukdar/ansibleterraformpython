@@ -4,7 +4,11 @@ provider "aws" {
 }
 
 
-
+terraform {
+  backend "s3" {
+   
+  }
+}
 
 
 # Create a VPC to launch our instances into
